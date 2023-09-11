@@ -1,0 +1,32 @@
+plugins {
+//    id 'java'
+    id 'scala'
+}
+
+group 'net.edsv.labs'
+version '1.0-SNAPSHOT'
+
+repositories {
+    maven { url "https://artifactory.vasdev.kyivstar.ua:443/artifactory/virtual" }
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.scala-lang:scala-library:2.12.16'
+
+//    implementation 'org.scalactic:scalactic_2.13:3.2.16'
+//    testImplementation 'org.scalatest:scalatest_2.13:3.2.16'
+
+    testImplementation('junit:junit:4.13.1')
+    testImplementation('org.scalatest:scalatest_2.12:3.0.5')
+    testImplementation('org.scalamock:scalamock_2.12:4.4.0')
+    testRuntimeOnly("org.junit.vintage:junit-vintage-engine:5.8.2")
+
+
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
